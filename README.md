@@ -41,7 +41,7 @@ logger.debug('Hello its a debug line');
 
 Output : 
 ```bash
-2018-09-04T14:46:57.555Z [log] debug: Hello its a debug line
+2019-05-04 10:48:18:633 [log] debug: Hello its a debug line
 ```
 Code:
 ```js
@@ -50,6 +50,6 @@ logger.debug('Hello its a log', {label : 'FIRST'});
 
 Output : 
 ```bash
-2018-09-04T14:46:46.986Z [FIRST] debug: Hello its a log
+2019-05-04 10:48:59:105 [FIRST] debug: Hello its a log
 ```
 

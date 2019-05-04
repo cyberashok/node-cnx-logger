@@ -18,6 +18,7 @@
  */
 const winston = require('winston');
 const circularjson = require('circular-json');
+const moment = require('moment');
 const path = require('path');
 
 require('winston-daily-rotate-file');
@@ -41,9 +42,9 @@ const customFormat = winston.format.printf(info => {
   if (info.label && typeof info.label === 'string') {
     label = label ? `${label}|${info.label}` : info.label;
   }
-  return `${info.timestamp} [${label || 'log'}] ${info.level}: ${message}`;
+  let timestamp = moment().format('YYYY-MM-DD hh:mm:ss:SSS').trim()
+  return `${timestamp} [${label || 'log'}] ${info.level}: ${message}`;
 });
-
 function LoggerConfig(opts) {
   const transports = [new winston.transports.Console()];
   if (opts.fsLog) {
